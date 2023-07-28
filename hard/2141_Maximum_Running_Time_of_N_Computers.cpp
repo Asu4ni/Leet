@@ -11,7 +11,8 @@ public:
         if (n > size(batteries)) return 0LL;
         if (n == size(batteries)) return *std::min_element(begin(batteries), end(batteries));
 
-        std::sort(begin(batteries), end(batteries), std::greater{});
+        std::partial_sort(begin(batteries), next(begin(batteries), n), end(batteries),
+                          std::greater{});
 
         auto sum = std::accumulate(begin(batteries), end(batteries), 0LL);
 
