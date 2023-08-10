@@ -7,7 +7,7 @@ class Solution
     auto biSearch(It begin, It end, int target)
     {
         if (begin == end) return end;
-        auto it = lower_bound(begin, end, target);
+        auto it = std::lower_bound(begin, end, target);
         return it != end && *it == target ? it : end;
     }
 
