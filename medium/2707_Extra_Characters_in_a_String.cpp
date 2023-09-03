@@ -13,7 +13,7 @@ class Solution
     using Hash = std::uint64_t;
     static auto &updateHash(Hash &hash, char ch)
     {
-        return hash = std::rotl(hash, 5) | static_cast<Hash>(ch - 'a' + 1);
+        return hash = std::rotl(hash, 5) ^ static_cast<Hash>(ch - 'a' + 1);
     }
     static auto getHash(std::string_view strv)
     {
